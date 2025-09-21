@@ -3,13 +3,33 @@ __pycache__/
 *.pyc
 *.egg-info/
 .venv/
+
 # Notebooks / local
 .ipynb_checkpoints/
+
 # Databricks exports
 *.dbc
+
 # OS
 .DS_Store
 Thumbs.db
+
 # IDE
 .vscode/
 .idea/
+goal.md
+
+# Python venv
+.venv/
+env/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
+__pycache__/
+*.py[cod]
+.kaggle/kaggle.json
+
+kaggle.json
+.kaggle/kaggle.json
