@@ -16,7 +16,7 @@ The goal: demonstrate a working **medallion architecture** in Databricks CE with
   - `products_raw`
   - `payments_raw`
 
-**Screenshot:**
+**Bronze Delta tables:**
 
 ![Bronze tables](./screenshots/bronze_tables.png)
 
@@ -52,7 +52,7 @@ The goal: demonstrate a working **medallion architecture** in Databricks CE with
 - **Fact Table:**
   - `f_sales` (grain = order_id + item_id)
 
-**Screenshot:**
+**Gold Delta tables:**
 ![Gold tables](./screenshots/gold_tables.png)
 
 ---
@@ -87,7 +87,7 @@ LIMIT 10;
 - Total revenue: ~R$ 16.3M
 - No missing product joins (0 FK violations)
 
-**Screenshot:**
+**Validation Queries:**
 
 ```sql
 -- Row counts
