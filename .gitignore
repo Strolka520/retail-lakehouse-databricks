@@ -33,3 +33,6 @@ __pycache__/
 
 kaggle.json
 .kaggle/kaggle.json
+secrets.txt
+goal.md
+

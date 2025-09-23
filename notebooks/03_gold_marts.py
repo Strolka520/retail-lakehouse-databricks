@@ -2,15 +2,15 @@
 
 from pyspark.sql import functions as F
 
-silver_db = "retail_silver"
-gold_db   = "retail_gold"
+silver_db = "silver"
+gold_db   = "gold"
 spark.sql(f"CREATE DATABASE IF NOT EXISTS {gold_db}")
 
-orders      = spark.table(f"{silver_db}.orders")
-order_items = spark.table(f"{silver_db}.order_items")
-customers   = spark.table(f"{silver_db}.customers")
-products    = spark.table(f"{silver_db}.products")
-payments    = spark.table(f"{silver_db}.payments")
+orders      = spark.table(f"{silver_db}.olist_orders_dataset")
+order_items = spark.table(f"{silver_db}.olist_order_items_dataset")
+customers   = spark.table(f"{silver_db}.olist_customers_dataset")
+products    = spark.table(f"{silver_db}.olist_products_dataset")
+payments    = spark.table(f"{silver_db}.olist_order_payments_dataset")
 
 # d_customer (current snapshot)
 d_customer = (customers

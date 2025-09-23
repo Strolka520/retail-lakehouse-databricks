@@ -1,10 +1,9 @@
-# PURPOSE: Ingest raw CSVs into Delta Bronze tables.
-# ACTION: Copilot, write helper functions where TODOs appear.
+# PURPOSE: Ingest raw CSVs into Delta Bronze tables. This can be done directly through UI as well.
 
 from pyspark.sql import functions as F
 from pyspark.sql import types as T
 
-catalog_db = "retail_bronze"
+catalog_db = "bronze"
 spark.sql(f"CREATE DATABASE IF NOT EXISTS {catalog_db}")
 
 # Config
@@ -25,7 +24,6 @@ def read_csv_to_df(path: str):
             .csv(path))
 
 def normalize_columns(df):
-    # TODO(Copilot): implement: lowercase, replace spaces/hyphens with underscores
     for c in df.columns:
         df = df.withColumnRenamed(c, c.strip().lower().replace(" ", "_").replace("-", "_"))
     return df

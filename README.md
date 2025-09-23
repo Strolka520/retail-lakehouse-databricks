@@ -1,20 +1,14 @@
-cat > LICENSE << 'EOF'
-MIT License
-Copyright (c) 2025
-Permission is hereby granted, free of charge, to any person obtaining a copy...
-
-
 # Retail Lakehouse (Databricks + Delta)
 
 ## Overview
 
-Medallion architecture (Bronze → Silver → Gold) on Delta Lake using a public e-commerce dataset.
+Medallion architecture (Bronze -> Silver -> Gold) on Delta Lake using a public e-commerce dataset.
 
 ## Stack
 
 - Databricks Community Edition
 - Delta Lake
-- Power BI Desktop or Streamlit (for visuals)
+- Power BI
 
 ## Repo Structure
 
@@ -38,6 +32,33 @@ See docs/architecture.png
 
 ## Dataset
 
-Use a public e-commerce dataset (e.g., Olist or Online Retail II). Place CSVs in `/FileStore/retail/`.
+Use a public e-commerce dataset (Olist). Place CSVs in `/FileStore/retail/`.
 
-EOF
+## Results
+
+Built a working **Bronze → Silver → Gold Lakehouse** in Databricks CE using the Olist E-commerce dataset.
+
+- **Bronze**: Raw CSVs → Delta (`orders_raw`, `order_items_raw`, `customers_raw`, `products_raw`, `payments_raw`)
+- **Silver**: Cleaned & conformed tables with typed columns, deduplication, null handling
+- **Gold**: Star schema with `f_sales` fact + dimensions (`d_customer`, `d_product`, `d_calendar`)
+- **Views**: `vw_sales_enriched` (fact + dims) and `vw_sales_daily` (daily revenue/freight aggregates)
+
+**Key Numbers:**
+
+- Fact rows: ~112K
+- Revenue: ~R$16.3M (2016–2018)
+- No missing product joins
+
+**Sample Visuals:**
+
+- Daily revenue trend
+- Top product categories by sales
+- Revenue by state
+
+See [docs/RESULTS.md](./docs/RESULTS.md) for screenshots, queries, and visualizations.
+
+## Next
+
+- Add data quality checks (row counts, null % thresholds)
+- Optional: Airflow DAG to sequence Bronze → Silver → Gold
+- Visuals: Power BI Desktop report (daily revenue, top categories)
