@@ -1,0 +1,56 @@
+{
+  "name": "Streamlit Light",
+  "dataColors": [
+    "#204020", "#3BA372", "#68C588", "#95D5AA",
+    "#5DADE2", "#2980B9", "#AF7AC5", "#E59866", "#E74C3C"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#000000",
+  "tableAccent": "#204020",
+
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [ { "color": { "solid": { "color": "#000000" } }, "fontSize": 13 } ],
+        "labels": [ { "color": { "solid": { "color": "#333333" } }, "fontSize": 11 } ],
+        "categoryLabels": [ { "color": { "solid": { "color": "#333333" } }, "fontSize": 11 } ],
+        "background": [ { "color": { "solid": { "color": "#F9F9F9" } }, "transparency": 0 } ]
+      }
+    },
+
+    "page": {
+      "*": {
+        "background": [ { "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 } ]
+      }
+    },
+
+    "card": {
+      "*": {
+        "calloutValue": [ { "color": { "solid": { "color": "#204020" } }, "fontSize": 36 } ],
+        "categoryLabels": [ { "color": { "solid": { "color": "#333333" } }, "fontSize": 12 } ]
+      }
+    },
+
+    "barChart": {
+      "*": {
+        "dataPoint": [ { "defaultColor": { "solid": { "color": "#3BA372" } } } ],
+        "categoryAxis": [ { "labelColor": { "solid": { "color": "#333333" } } } ],
+        "valueAxis": [ { "labelColor": { "solid": { "color": "#333333" } } } ]
+      }
+    },
+
+    "lineChart": {
+      "*": {
+        "categoryAxis": [ { "labelColor": { "solid": { "color": "#333333" } } } ],
+        "valueAxis": [ { "labelColor": { "solid": { "color": "#333333" } } } ],
+        "dataPoint": [ { "lineColor": { "solid": { "color": "#204020" } } } ]
+      }
+    },
+
+    "filledMap": {
+      "*": {
+        "categoryLabels": [ { "color": { "solid": { "color": "#333333" } } } ]
+      }
+    }
+  }
+}
