@@ -38,7 +38,7 @@ The goal: demonstrate a working **medallion architecture** in Databricks CE with
 | silver.customers | 99,444 |
 | silver.products  | 3,700  |
 
-**Screenshot:**
+**Order Items Table Data:**
 ![Silver orders preview](./screenshots/silver_orders.png)
 
 ---
@@ -74,11 +74,7 @@ ORDER BY revenue DESC
 LIMIT 10;
 ```
 
-
-
 ---
-
-
 
 ## 5. Data Quality & Sanity Checks
 
