@@ -43,19 +43,13 @@ Built a working **Bronze → Silver → Gold Lakehouse** in Databricks CE using 
 - **Gold**: Star schema with `f_sales` fact + dimensions (`d_customer`, `d_product`, `d_calendar`)
 - **Views**: `vw_sales_enriched` (fact + dims) and `vw_sales_daily` (daily revenue/freight aggregates)
 
-**Key Numbers:**
+## Power BI Dashboard
+This project concludes with a business-facing dashboard built in Power BI, highlighting revenue trends, top categories, and geographic distribution.
 
-- Fact rows: ~112K
-- Revenue: ~R$16.3M (2016–2018)
-- No missing product joins
+![E-Commerce Lakehouse Dashboard](./docs/screenshots/pbi_dashboard.png)
 
-**Sample Visuals:**
 
-- Daily revenue trend
-- Top product categories by sales
-- Revenue by state
-
-See [docs/RESULTS.md](./docs/RESULTS.md) for screenshots, queries, and visualizations.
+See [docs/RESULTS.md](./docs/RESULTS.md) for details, queries, and visualizations.
 
 ## Next
 

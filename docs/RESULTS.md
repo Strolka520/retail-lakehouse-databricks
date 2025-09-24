@@ -5,6 +5,10 @@
 This document captures the validation, queries, and screenshots from the end-to-end **Bronze → Silver → Gold** pipeline for the Olist E-commerce dataset.
 The goal: demonstrate a working **medallion architecture** in Databricks CE with BI-ready outputs.
 
+**Databricks:**
+
+![Databricks Welcome](./screenshots/databricks_welcome.png)
+
 ---
 
 ## 1. Bronze Layer
@@ -78,6 +82,7 @@ LIMIT 10;
 
 ## 5. Data Quality & Sanity Checks
 
+- Uses full dataset
 - Verified date range: `2016-09-04` → `2018-10-17`
 - Fact rows: ~112,650
 - Total revenue: ~R$ 16.3M
@@ -134,14 +139,33 @@ LIMIT 200;
 
 ---
 
-## 6. Visualizations
+## 6. Power BI Visualizations
 
-- **Daily Revenue Trend** (from `vw_sales_daily`)
-- **Revenue by State** (geo heatmap)
-- **Top Categories** (bar chart)
+The Gold layer was connected into Power BI Desktop to create a business-facing dashboard.  
+The model is based on a star schema (`f_sales` fact with `d_customer`, `d_product`, and `d_calendar` dimensions).
 
-**Screenshot:**
-![Visualizations](./screenshots/visualizations.png)
+### Model View
+The data model shows the relationships between fact and dimension tables:
+
+![Power BI Model](./screenshots/semantic_model.png)
+
+### Dashboard
+The report provides KPIs, time-series trends, category breakdowns, and geographic analysis.
+
+**Full Dashboard Canvas**
+![Power BI Dashboard](./screenshots/pbi_dashboard.png)
+
+**KPI Cards**
+![Power BI KPIs](./screenshots/pbi_kpis.png)
+
+**Revenue Trend (Line Chart)**
+![Revenue Trend](./screenshots/pbi_revenue_trend.png)
+
+**Top Categories (Bar Chart)**
+![Top Categories](./screenshots/pbi_top_categories.png)
+
+**Revenue by State (Map)**
+![Revenue by State](./screenshots/pbi_revenue_map.png)
 
 ---
 
