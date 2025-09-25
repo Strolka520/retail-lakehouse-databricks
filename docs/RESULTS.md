@@ -14,11 +14,11 @@ The goal: demonstrate a working **medallion architecture** in Databricks CE with
 ## 1. Bronze Layer
 
 - Raw CSVs ingested into **`bronze`** database as Delta tables:
-  - `orders_raw`
-  - `order_items_raw`
-  - `customers_raw`
-  - `products_raw`
-  - `payments_raw`
+  - olist_orders_dataset
+  - olist_order_items_dataset
+  - olist_customers_dataset
+  - olist_products_dataset
+  - olist_order_payments_dataset
 
 **Bronze Delta tables:**
 
@@ -36,11 +36,11 @@ The goal: demonstrate a working **medallion architecture** in Databricks CE with
 
 **Row Counts (sample):**
 
-| Table            | Rows   |
-| ---------------- | ------ |
-| silver.orders    | 99,441 |
-| silver.customers | 99,444 |
-| silver.products  | 3,700  |
+| Table                            | Rows    |
+| -------------------------------- | ------- |
+| silver.olist_orders_dataset      | 99,441  |
+| silver.olist_order.items_dataset | 112,651 |
+| silver.olist_products_dataset    | 32,951  |
 
 **Order Items Table Data:**
 ![Silver orders preview](./screenshots/silver_orders.png)
@@ -141,15 +141,17 @@ LIMIT 200;
 
 ## 6. Power BI Visualizations
 
-The Gold layer was connected into Power BI Desktop to create a business-facing dashboard.  
+The Gold layer was connected into Power BI Desktop to create a business-facing dashboard.
 The model is based on a star schema (`f_sales` fact with `d_customer`, `d_product`, and `d_calendar` dimensions).
 
 ### Model View
+
 The data model shows the relationships between fact and dimension tables:
 
 ![Power BI Model](./screenshots/semantic_model.png)
 
 ### Dashboard
+
 The report provides KPIs, time-series trends, category breakdowns, and geographic analysis.
 
 **Full Dashboard Canvas**

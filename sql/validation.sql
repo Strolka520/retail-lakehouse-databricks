@@ -5,6 +5,16 @@ UNION ALL SELECT 'd_product',  COUNT(*) FROM gold.d_product
 UNION ALL SELECT 'd_calendar', COUNT(*) FROM gold.d_calendar
 ;
 
+SELECT 'olist_orders_dataset' AS tbl, COUNT(*) AS rows FROM silver.olist_orders_dataset
+UNION ALL SELECT 'otis_order_items_dataset',  COUNT(*) FROM silver.olist_order_items_dataset
+UNION ALL SELECT 'otis_products_dataset', COUNT(*) FROM silver.olist_products_dataset
+;
+
+SELECT 'olist_orders_dataset' AS tbl, COUNT(*) AS rows FROM bronze.olist_orders_dataset
+UNION ALL SELECT 'otis_order_items_dataset',  COUNT(*) FROM bronze.olist_order_items_dataset
+UNION ALL SELECT 'otis_products_dataset', COUNT(*) FROM bronze.olist_products_dataset
+;
+
 -- Null FK diagnostics
 SELECT COUNT(*) AS null_customer_in_fact
 FROM gold.f_sales
@@ -47,3 +57,4 @@ GROUP BY order_date, customer_state
 ORDER BY order_date, revenue DESC
 LIMIT 200
 ;
+
